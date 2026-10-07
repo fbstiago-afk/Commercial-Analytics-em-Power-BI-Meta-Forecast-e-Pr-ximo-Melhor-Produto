@@ -1,0 +1,46 @@
+relationship 2fa83da6-3983-4f24-8171-21d788fd4734
+	fromColumn: fVendas.cliente_id
+	toColumn: dCliente.id
+
+relationship 18f15823-7b18-40d7-9ce4-c03fcd9f928c
+	fromColumn: fVendas.produto_id
+	toColumn: dProduto.id
+
+relationship 147f6f83-8e6a-4ffa-ba61-70331061ee0c
+	fromColumn: fVendas.vendedor_id
+	toColumn: dVendedor.id
+
+relationship 661142c4-2f2b-4461-85ed-21b8395dae3a
+	fromColumn: fVendas.data
+	toColumn: dCalendario.Data
+
+relationship 15ad26d6-c395-4f84-8757-6db672a7dc56
+	toCardinality: many
+	fromColumn: fMetas.categoria_id
+	toColumn: dProduto.categoria_id
+
+relationship d52dedc4-8786-4100-b3dd-4f03913054b4
+	toCardinality: many
+	fromColumn: fMetas.gerente_id
+	toColumn: dVendedor.gerente_id
+
+relationship 3aba0bb4-39de-420d-baa8-8721e7918179
+	fromColumn: fMetas.Data
+	toColumn: dCalendario.Data
+
+relationship 8da2f313-8f1b-4358-ac90-856c5f6d380c
+	fromColumn: fSimilaridadeClientes.cliente
+	toColumn: dCliente.id
+
+relationship baa4e38f-51df-495a-b2c5-b7635e673709
+	fromColumn: fSimilaridadeClientes.similar
+	toColumn: dClienteSimilar.id
+
+relationship 2e351bfa-834b-42e0-95f5-1276e934018d
+	fromColumn: fVendas.cliente_id
+	toColumn: dClienteSimilar.id
+
+relationship rel_dCliente_pSegmento
+	fromColumn: dCliente.'Segmento RFV'
+	toColumn: pSegmento.Segmento
+

@@ -1,0 +1,43 @@
+/// Field parameter: dimensão de quebra nos gráficos de diagnóstico.
+table pDimensão
+	lineageTag: 554cba75-acaa-408a-a48a-595f13468a21
+
+	column Dimensão
+		lineageTag: e979d21d-c177-492d-8549-7a8bdc735efe
+		sourceColumn: [Value1]
+		sortByColumn: 'Dimensão Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Dimensão Fields'
+
+	column 'Dimensão Fields'
+		isHidden
+		lineageTag: e6868261-6ab8-4704-a44a-113957f5dab7
+		sourceColumn: [Value2]
+		sortByColumn: 'Dimensão Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+	column 'Dimensão Order'
+		isHidden
+		lineageTag: f5ae04e4-386f-4869-956d-2797d3f6ab28
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+	partition pDimensão = calculated
+		mode: import
+		source =
+				{
+				    ( "Gerente", NAMEOF ( 'dVendedor'[gerente_descricao] ), 0 ),
+				    ( "Supervisor", NAMEOF ( 'dVendedor'[supervisor_descricao] ), 1 ),
+				    ( "Vendedor", NAMEOF ( 'dVendedor'[descricao] ), 2 ),
+				    ( "Categoria", NAMEOF ( 'dProduto'[categoria_descricao] ), 3 ),
+				    ( "Produto", NAMEOF ( 'dProduto'[descricao] ), 4 ),
+				    ( "Região", NAMEOF ( 'dCliente'[regiao] ), 5 ),
+				    ( "UF", NAMEOF ( 'dCliente'[uf] ), 6 )
+				}
+

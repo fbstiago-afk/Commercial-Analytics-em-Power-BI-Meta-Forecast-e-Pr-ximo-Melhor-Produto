@@ -1,0 +1,59 @@
+table fMetas
+	lineageTag: 69dc47d9-fdaf-4f23-98fd-65b3e248b91e
+
+	column Data
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 95b74a54-606e-4ab4-b136-e35273461b05
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column gerente_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f53c882c-8c5a-4ffb-ab70-5c51c934c724
+		summarizeBy: none
+		sourceColumn: gerente_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ff1b3d88-87d6-463b-a93e-4f031c5abfa2
+		summarizeBy: none
+		sourceColumn: categoria_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor
+		dataType: decimal
+		isHidden
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 65188157-9065-4d34-a8f3-00598d8585ac
+		summarizeBy: sum
+		sourceColumn: Valor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition fMetas-702e70ef-57cb-4f0b-9f45-05a2130caa2d = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				    Fonte = Table.Combine({fMetas2022, fMetas2023})
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

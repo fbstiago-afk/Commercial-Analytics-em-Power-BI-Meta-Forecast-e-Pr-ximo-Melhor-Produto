@@ -1,0 +1,96 @@
+table dClienteSimilar
+	lineageTag: 3447bd1c-428f-4f43-8bcf-6cb204e2c437
+
+	column id
+		lineageTag: c6b5044c-a8fd-4bf3-bbe4-d9bfc9496ee6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dCliente[id]
+
+		annotation SummarizationSetBy = Automatic
+
+	column descricao
+		lineageTag: 74c3af80-8352-44a2-b835-6007c0a07b84
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dCliente[descricao]
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidade
+		lineageTag: 05263b19-af44-45b5-94c5-f82a1ddaebf7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dCliente[cidade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		lineageTag: f4cdb9ab-e62b-4688-8248-f8755d412246
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dCliente[estado]
+
+		annotation SummarizationSetBy = Automatic
+
+	column uf
+		lineageTag: a619d5e0-fdf5-4610-a795-cffc061bc4c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dCliente[uf]
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidade_id
+		formatString: 0
+		lineageTag: 0c89eeb0-bdd2-4444-9924-1ba0e3720339
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: dCliente[cidade_id]
+
+		annotation SummarizationSetBy = Automatic
+
+	column regiao
+		lineageTag: 6f6c0b9f-859b-42ac-94a8-29fe992805c4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: dCliente[regiao]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primeira Compra'
+		lineageTag: cbde5815-c6f3-42cc-9ec1-bf3fe74426d9
+		isNameInferred
+		sourceColumn: dCliente[Primeira Compra]
+
+	column 'Última Compra'
+		lineageTag: 1086d5af-36ec-4d87-a802-852ece1379c7
+		isNameInferred
+		sourceColumn: dCliente[Última Compra]
+
+	column 'Recência (dias)'
+		lineageTag: 2c4dbb62-0195-4c99-802a-0d7ccb5eea9e
+		isNameInferred
+		sourceColumn: dCliente[Recência (dias)]
+
+	column 'Pedidos 12M'
+		lineageTag: ef4d9492-5871-4a63-bd97-a3f89a757d3c
+		isNameInferred
+		sourceColumn: dCliente[Pedidos 12M]
+
+	column 'Faturamento 12M'
+		lineageTag: f51c4db8-a528-4271-84ab-3283e2c91310
+		isNameInferred
+		sourceColumn: dCliente[Faturamento 12M]
+
+	column 'Segmento RFV'
+		lineageTag: a38f564b-d4b8-4d2c-95f9-6a1f806b3e87
+		isNameInferred
+		sourceColumn: dCliente[Segmento RFV]
+
+	partition dClienteSimilar = calculated
+		mode: import
+		source = dCliente
+
+	annotation PBI_Id = d63173d502b94172a25b071e46f0e838
+

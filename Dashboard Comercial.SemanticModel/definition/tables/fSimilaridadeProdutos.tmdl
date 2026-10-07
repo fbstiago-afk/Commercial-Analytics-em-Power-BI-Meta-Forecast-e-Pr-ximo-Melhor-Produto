@@ -1,0 +1,48 @@
+table fSimilaridadeProdutos
+	lineageTag: 14844521-46ec-4de7-b7cc-03541c99ec33
+
+	column produto
+		dataType: string
+		lineageTag: e8f80805-c307-4a31-ad43-97d1d42f77ce
+		summarizeBy: none
+		sourceColumn: produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column similar
+		dataType: string
+		lineageTag: 09af07d2-330d-4861-b68a-62c454d06184
+		summarizeBy: none
+		sourceColumn: similar
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: da8b93ea-1e80-4060-94e5-a0530a5acd73
+		summarizeBy: sum
+		sourceColumn: valor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fSimilaridadeProdutos = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				    Fonte = similaridade_produtos,
+				    df_similaridade = Fonte{[Name="df_similaridade"]}[Value],
+				    #"Outras Colunas Não Dinâmicas" = Table.UnpivotOtherColumns(df_similaridade, {"produto"}, "similar", "valor"),
+				    #"Tipo Alterado com Localidade" = Table.TransformColumnTypes(#"Outras Colunas Não Dinâmicas", {{"valor", type number}}, "en-US"),
+				    #"Linhas Filtradas1" = Table.SelectRows(#"Tipo Alterado com Localidade", each ([valor] < 0.99 and [valor] > 0.5)),
+				    #"Linhas Agrupadas1" = Table.Group(#"Linhas Filtradas1", {"produto"}, {{"Tabela", each _, type table [cliente=nullable text, similar=text, valor=nullable number]}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Linhas Agrupadas1", "Personalizar", each Table.FirstN(Table.Sort([Tabela], {{"valor", Order.Descending}}), 3)),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Personalização Adicionada",{"Personalizar"}),
+				    #"Personalizar Expandido" = Table.ExpandTableColumn(#"Outras Colunas Removidas", "Personalizar", {"produto", "similar", "valor"}, {"produto", "similar", "valor"}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Personalizar Expandido",{{"produto", type text}, {"similar", type text}, {"valor", type number}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

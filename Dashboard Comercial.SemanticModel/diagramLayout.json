@@ -1,0 +1,180 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 40.815237560524906
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1302.8606884899332,
+            "y": 62.911784759718877
+          },
+          "nodeIndex": "Medidas",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1684.3151387769656,
+            "y": 228.77625528261214
+          },
+          "nodeIndex": "auxUX",
+          "nodeLineageTag": "757d4b42-709a-44fc-bc15-d494f43891a7",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1678.3,
+            "y": 56.953125
+          },
+          "nodeIndex": "auxGerenteSupervisor",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 491.5955465587042,
+            "y": 56.953125
+          },
+          "nodeIndex": "dCalendario",
+          "size": {
+            "height": 195.83805668016191,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 243,
+            "y": 57.953125
+          },
+          "nodeIndex": "dCliente",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1029.4606926235331,
+            "y": 193.13231679854317
+          },
+          "nodeIndex": "dClienteSimilar",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 56.953125
+          },
+          "nodeIndex": "dProduto",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 729.7,
+            "y": 56.953125
+          },
+          "nodeIndex": "dVendedor",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 510.36639676113361,
+            "y": 577.72640435222672
+          },
+          "nodeIndex": "fMetas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 937.90218674451785,
+            "y": 571.01027879867331
+          },
+          "nodeIndex": "fSimilaridadeClientes",
+          "size": {
+            "height": 195.02146661785059,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1273.8524845242634,
+            "y": 596.163058244547
+          },
+          "nodeIndex": "fSimilaridadeProdutos",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 225.09999999999991,
+            "y": 570.853125
+          },
+          "nodeIndex": "fVendas",
+          "size": {
+            "height": 304.39274219593688,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1648.4119254647435,
+            "y": 386.19303667122512
+          },
+          "nodeIndex": "auxVisao",
+          "nodeLineageTag": "9f31437e-8458-4acc-a4a5-68da9452d7fd",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 90.65241858541853,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

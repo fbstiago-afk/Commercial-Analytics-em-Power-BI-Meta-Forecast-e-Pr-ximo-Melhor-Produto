@@ -1,0 +1,45 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Fatos
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup Dimensões
+
+	annotation PBI_QueryGroupOrder = 2
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["dCalendario","dCliente","dProduto","dVendedor","fMetas2022","fMetas2023","fMetas","fVendas","similaridade_clientes","similaridade_produtos","Medidas","Foto Produto","Foto Vendedor","auxUX","fRecomendacoes","fSimilaridadeClientes","fSimilaridadeProdutos","fxDiasMes","fxDiasTrimestre"]
+
+annotation PBI_ProTooling = ["CalcGroup","DevMode","MCP-PBIModeling"]
+
+ref table dCliente
+ref table dProduto
+ref table dVendedor
+ref table fVendas
+ref table fMetas
+ref table Medidas
+ref table auxGerenteSupervisor
+ref table dCalendario
+ref table fSimilaridadeClientes
+ref table dClienteSimilar
+ref table fSimilaridadeProdutos
+ref table auxVisao
+ref table pForecast
+ref table pRanking
+ref table pSegmento
+ref table dProdutoBase
+ref table pMétrica
+ref table pDimensão
+
+ref cultureInfo pt-BR
+

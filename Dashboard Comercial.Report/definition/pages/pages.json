@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+  "pageOrder": [
+    "p01executiva",
+    "p02performance",
+    "p03forecast",
+    "p04produtos",
+    "p05clientes",
+    "p06nbp",
+    "tt_produto",
+    "tt_vendedor",
+    "tt_cliente"
+  ],
+  "activePageName": "p01executiva"
+}

@@ -1,0 +1,48 @@
+table auxGerenteSupervisor
+	lineageTag: cc78e04c-6399-45ba-8819-f6b849999624
+
+	column fp_supervisor_gerente
+		lineageTag: f3528709-1b71-4da2-b0af-a102a3f0db77
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'fp_supervisor_gerente Order'
+
+		relatedColumnDetails
+			groupByColumn: 'fp_supervisor_gerente Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fp_supervisor_gerente Fields'
+		isHidden
+		lineageTag: baa3e4ae-6db0-4a96-89b2-78e247d21f46
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'fp_supervisor_gerente Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'fp_supervisor_gerente Order'
+		isHidden
+		formatString: 0
+		lineageTag: 7d79861b-6722-4c60-9871-bffd0a1ce1c8
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition auxGerenteSupervisor-467ff5b6-f599-4cee-b037-cbb99c0fbb0a = calculated
+		mode: import
+		source =
+				{
+				    ("Gerente", NAMEOF('dVendedor'[gerente_descricao]), 0),
+				    ("Supervisor", NAMEOF('dVendedor'[supervisor_descricao]), 1)
+				}
+
+	annotation PBI_Id = 8f93960a3e574e2bacc1d292cf4ed759
+

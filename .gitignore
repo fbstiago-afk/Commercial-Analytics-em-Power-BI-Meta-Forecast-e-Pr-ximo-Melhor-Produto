@@ -1,0 +1,9 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+# Fora do repositório
+_backup_*/
+Dashboard Comercial Loja Roupas*
+Captura de tela*.png
+Prompt.txt
+__pycache__/
+*.pyc

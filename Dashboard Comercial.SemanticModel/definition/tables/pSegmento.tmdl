@@ -1,0 +1,39 @@
+/// Segmentos RFV de clientes, na ordem de valor para o negócio.
+table pSegmento
+	lineageTag: ab00adfa-5980-45db-98ef-59cfdc9b5bf8
+
+	column Segmento
+		lineageTag: f45dd5a5-750d-4c0d-860d-0a72f9c33c60
+		isNameInferred
+		sourceColumn: [Segmento]
+		sortByColumn: Ordem
+
+	column Ordem
+		isHidden
+		lineageTag: 46dc9d6c-93f3-43f5-8fcf-5a7df0893baa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Ordem]
+
+	column 'Ação sugerida'
+		lineageTag: 2f560e66-3f15-47f4-b203-b7d856631bb5
+		isNameInferred
+		sourceColumn: [Ação sugerida]
+
+	partition pSegmento = calculated
+		mode: import
+		source =
+				DATATABLE (
+				    "Segmento", STRING,
+				    "Ordem", INTEGER,
+				    "Ação sugerida", STRING,
+				    {
+				        { "VIP", 1, "Proteger: atendimento prioritário e oferta antecipada de lançamentos." },
+				        { "Leais", 2, "Expandir mix: cross-sell com base nos clientes similares." },
+				        { "Potencial", 3, "Aumentar frequência: recompra dos itens já adquiridos." },
+				        { "Novos", 4, "Garantir a segunda compra nos próximos 60 dias." },
+				        { "Em risco", 5, "Reativar agora: contato do vendedor com oferta de recompra." },
+				        { "Inativos", 6, "Campanha de reconquista de baixo custo." }
+				    }
+				)
+

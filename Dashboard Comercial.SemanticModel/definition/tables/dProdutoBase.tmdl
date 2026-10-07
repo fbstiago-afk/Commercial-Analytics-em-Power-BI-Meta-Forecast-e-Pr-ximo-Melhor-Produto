@@ -1,0 +1,23 @@
+/// Cópia desconectada dos modelos de produto. Serve de 'produto âncora' na análise de afinidade (quem comprou X também comprou Y).
+table dProdutoBase
+	lineageTag: b25c18be-4fa6-4c56-a592-7b125226cf13
+
+	column 'Produto Base'
+		lineageTag: dd460c36-6286-45b7-88de-1e68c27983e4
+		isNameInferred
+		sourceColumn: [Produto Base]
+
+	column 'Categoria Base'
+		lineageTag: 08dbe422-0410-4e24-96aa-9032d87d03c8
+		isNameInferred
+		sourceColumn: [Categoria Base]
+
+	partition dProdutoBase = calculated
+		mode: import
+		source =
+				SELECTCOLUMNS (
+				    SUMMARIZE ( dProduto, dProduto[descricao], dProduto[categoria_descricao] ),
+				    "Produto Base", dProduto[descricao],
+				    "Categoria Base", dProduto[categoria_descricao]
+				)
+

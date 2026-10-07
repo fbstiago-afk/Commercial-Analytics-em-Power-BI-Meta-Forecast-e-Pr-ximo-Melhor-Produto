@@ -1,0 +1,38 @@
+/// Parâmetro desconectado: método de projeção usado na medida [Forecast]. Sem seleção, vale o Adaptativo (menor erro no backtest).
+table pForecast
+	lineageTag: 229784ef-ac94-4492-b2c8-1739a728fe97
+
+	column Método
+		lineageTag: 8680251d-e6a2-4951-845d-e63c57bbb030
+		isNameInferred
+		sourceColumn: [Método]
+		sortByColumn: Ordem
+
+	column Ordem
+		isHidden
+		lineageTag: 82403f60-0daa-4737-b8e0-c2ec582b1fc9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Ordem]
+
+	column 'Como funciona'
+		lineageTag: b5644e4e-039c-43eb-a7a6-2d54bf71f709
+		isNameInferred
+		sourceColumn: [Como funciona]
+
+	partition pForecast = calculated
+		mode: import
+		source =
+				DATATABLE (
+				    "Método", STRING,
+				    "Ordem", INTEGER,
+				    "Como funciona", STRING,
+				    {
+				        { "Adaptativo", 1, "Combina o ritmo do mês com a sazonalidade do ano anterior; o peso do ritmo cresce conforme o mês avança." },
+				        { "Run Rate", 2, "Média diária realizada no mês corrente aplicada aos dias que faltam." },
+				        { "Média Móvel 28d", 3, "Média diária das últimas 4 semanas aplicada aos dias que faltam." },
+				        { "Sazonal", 4, "Mesmos dias do ano anterior corrigidos pelo crescimento dos últimos 90 dias." },
+				        { "Plano de Metas", 5, "Método original do relatório: assume que os dias restantes fecham exatamente na meta." }
+				    }
+				)
+
