@@ -1,5 +1,12 @@
 # Commercial Analytics em Power BI: Meta, Forecast e Próximo Melhor Produto
 
+<!-- portfolio-link:start -->
+[![Ver no portfólio](https://img.shields.io/badge/Ver%20o%20painel%20no%20portf%C3%B3lio-Bocardi%20Data-6C3BAA?style=for-the-badge)](https://bocardidata.base44.app/ProjectDetail?id=commercial-analytics-meta-forecast)
+
+> 🔗 **Quer ver o visual do Power BI?** Acesse a página do projeto no portfólio: **[https://bocardidata.base44.app/ProjectDetail?id=commercial-analytics-meta-forecast](https://bocardidata.base44.app/ProjectDetail?id=commercial-analytics-meta-forecast)**
+<!-- portfolio-link:end -->
+
+
 Solução executiva de analytics comercial em Power BI (PBIP/TMDL) que responde: estamos acima ou abaixo da meta? o que acontecerá até o fechamento? quais vendedores, produtos e clientes explicam o resultado? qual ação comercial tomar?
 
 ## Páginas
